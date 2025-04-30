@@ -11,15 +11,66 @@ def send_email(subject, body):
 
     html_content = f"""
     <html>
-    <body style="font-family:Arial; padding:20px;">
-        <div style="max-width:600px; margin:auto; border:1px solid #ddd; box-shadow: 2px 2px 10px #ccc;">
-            <h2 style="background-color:#0046be; color:white; padding:15px; text-align:center;">Fox News Update</h2>
-            <div style="padding:20px;">
+    <head>
+        <style>
+            body {{
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                padding: 20px;
+            }}
+            .container {{
+                max-width: 600px;
+                margin: auto;
+                background-color: #ffffff;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }}
+            .header {{
+                background-color: #0046be;
+                color: white;
+                text-align: center;
+                padding: 30px;
+                font-size: 32px;
+                font-weight: bold;
+                text-transform: capitalize; /* Ensures title case formatting */
+            }}
+            .subheading {{
+                font-size: 18px;
+                font-weight: bold;
+                color: #d71920;
+                margin-top: 20px;
+            }}
+            .content {{
+                padding: 25px;
+                font-size: 16px;
+                color: #333;
+                line-height: 1.8;
+            }}
+            .footer {{
+                text-align: center;
+                font-size: 14px;
+                color: #777;
+                padding: 20px;
+                border-top: 2px solid #ddd;
+            }}
+            a {{
+                color: #0046be;
+                text-decoration: none;
+                font-weight: bold;
+            }}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">📢 Fox News Update 📢</div>
+            <div class="content">
+                <p class="subheading">📢 Today's Top Stories</p>
                 <p>{body}</p>
             </div>
-            <footer style="text-align:center; font-size:12px; color:#777; padding:10px;">
+            <div class="footer">
                 <p>&copy; 2025 NewsBot | <a href="#">Unsubscribe</a></p>
-            </footer>
+            </div>
         </div>
     </body>
     </html>
